@@ -18,12 +18,12 @@ export default defineConfig([
             getOutputConfig({
                 file: pkg.exports['.'].import,
                 format: 'esm',
-                targets: '> 0.5%, last 2 versions, Firefox ESR, not dead, maintained node versions',
+                targets: 'supports es5',
             }),
             getOutputConfig({
                 file: pkg.exports['.'].require,
                 format: 'cjs',
-                targets: '> 0.5%, last 2 versions, Firefox ESR, not dead, maintained node versions',
+                targets: 'supports es5',
             }),
         ],
         external: /node_modules/,
@@ -33,35 +33,6 @@ export default defineConfig([
             typescript({
                 compilerOptions: {
                     noEmitOnError: true,
-                },
-            }),
-        ],
-    },
-
-    // es5 entry point
-    {
-        input: pkg.source,
-        output: [
-            getOutputConfig({
-                file: pkg.exports['./es5'].import,
-                format: 'esm',
-                targets: 'supports es5',
-            }),
-            getOutputConfig({
-                file: pkg.exports['./es5'].require,
-                format: 'cjs',
-                targets: 'supports es5',
-            }),
-        ],
-        external: /node_modules/,
-        plugins: [
-            nodeResolve(),
-            typescript({
-                compilerOptions: {
-                    noEmitOnError: true,
-                    // We don't want to emit declaration files more than once
-                    declaration: false,
-                    declarationMap: false,
                 },
             }),
         ],

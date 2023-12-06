@@ -1,6 +1,6 @@
 {
-    "name": "tailwind-merge",
-    "version": "2.1.0",
+    "name": "@vertisanpro/tailwind-merge",
+    "version": "2.1.0-v1",
     "description": "Merge Tailwind CSS classes without style conflicts",
     "keywords": [
         "tailwindcss",
@@ -34,19 +34,13 @@
             "require": "./dist/bundle-cjs.js",
             "import": "./dist/bundle-mjs.mjs",
             "default": "./dist/bundle-mjs.mjs"
-        },
-        "./es5": {
-            "types": "./dist/types.d.ts",
-            "require": "./dist/es5/bundle-cjs.js",
-            "import": "./dist/es5/bundle-mjs.mjs",
-            "default": "./dist/es5/bundle-mjs.mjs"
         }
     },
     "main": "./dist/bundle-cjs.js",
     "types": "./dist/types.d.ts",
     "repository": {
         "type": "git",
-        "url": "https://github.com/dcastil/tailwind-merge.git"
+        "url": "https://github.com/VertisanPRO/tailwind-merge.git"
     },
     "sideEffects": false,
     "scripts": {
@@ -88,8 +82,5 @@
         "ts-jest": "^29.1.1",
         "typescript": "^5.3.2",
         "zx": "^7.2.3"
-    },
-    "publishConfig": {
-        "provenance": true
     }
 }
